@@ -1,36 +1,64 @@
 package Abstraction;
 
-public interface Vehicle {
-    public void start();
-    public void stop();
+interface Shape
+{
+    double getArea();
+    double getPerimeter();
 }
-class Car implements Vehicle {
-    public void start() {
-        System.out.println("starting car engine");
-    }
-    public void stop() {
-        System.out.println("stopping car engine");
-    }
-    public void accelerate()
+
+
+class Circle implements Shape 
+{
+    double radius;
+
+    public Circle(double radius) 
     {
-        System.out.println("Accelerating");
+        this.radius = radius;
+    }
+
+    public double getArea() 
+    {
+        return Math.PI * radius * radius;
+    }
+
+    public double getPerimeter() 
+    {
+        return 2 * Math.PI * radius;
     }
 }
 
-class Truck implements Vehicle {
-    public void start() {
-        System.out.println("starting truck engine");
+class Rectangle implements Shape 
+{
+    private double length;
+    private double breadth;
+
+    public Rectangle(double length, double breadth) 
+    {
+        this.length = length;
+        this.breadth = breadth;
     }
-    public void stop() {
-        System.out.println("stopping truck engine");
+
+    public double getArea()
+    {
+        return length * breadth;
+    }
+
+    public double getPerimeter() 
+    {
+        return 2 * (length + breadth);
     }
 }
-class InterfaceExample {
-    public static void main(String[] args) {
-    Vehicle car = new Car();
-        car.start();
-        car.stop();
 
+public class InterfaceExample{
+    public static void main(String[] args) 
+    {
+        Shape circle = new Circle(5);
+        Shape rectangle = new Rectangle(3, 4);
+
+
+        System.out.println("Circle area: " + circle.getArea());
+        System.out.println("Circle perimeter: " + circle.getPerimeter());
+        System.out.println("Rectangle area: " + rectangle.getArea());
+        System.out.println("Rectangle perimeter: " + rectangle.getPerimeter());
     }
 }
-
