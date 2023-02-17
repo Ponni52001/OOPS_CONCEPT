@@ -1,6 +1,6 @@
 package Encapsulation;
 
-class Bank_Manager
+class BankManager
 {
     public static void main(String[] args)
     {
