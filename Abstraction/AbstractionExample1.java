@@ -1,36 +1,44 @@
 package Abstraction;
 
-abstract class Animal {
+abstract class Pen 
+{
 
-    public abstract void makeSound();
-
-    public void eat()
+    abstract void write();
+    public void makeUse()
     {
-        System.out.println("Animals are eating");
+        System.out.println("Used to write");
     }
 }
 
 
-class Dog extends Animal{
-    public void makeSound() {
-        System.out.println("lol lol");
-    }
+class BallpointPen extends Pen 
+{
 
-
-
-    public void sleep()
+    void write() 
     {
-        System.out.println("sleeping.....");
+        System.out.println("Writing with ballpoint pen.");
     }
-
-
 }
-class AbstractionExample1 {
-    public static void main(String[] args) {
-        Dog dog = new Dog();
-        dog.makeSound();
-        dog.sleep();
-        dog.eat();
 
+
+class FountainPen extends Pen 
+{
+
+    void write() 
+    {
+        System.out.println("Writing with fountain pen.");
+    }
+}
+
+
+public class AbstractionExample 
+{
+    public static void main(String[] args)
+    {
+        Pen ballpointPen = new BallpointPen();
+        Pen fountainPen = new FountainPen();
+
+        ballpointPen.write();
+        fountainPen.write();
     }
 }
