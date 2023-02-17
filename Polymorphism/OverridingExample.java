@@ -1,33 +1,41 @@
 package Polymorphism;
 
-class Fruit {
-    public void eat() {
+class Fruit
+{
+    public void eat()
+    {
         System.out.println("Eating a fruit");
     }
 }
 
-class Mango extends Fruit {
+class Mango extends Fruit
+{
     @Override
-    public void eat() {
+    public void eat()
+    {
         System.out.println("Eating a mango");
     }
 }
 
-class Apple extends Fruit {
+class Apple extends Fruit
+{
     @Override
-    public void eat() {
+    public void eat()
+    {
         System.out.println("Eating an apple");
     }
 }
 
-public class OverridingExample{
-    public static void main(String[] args) {
-        Fruit fruit1 = new Fruit();
-        Fruit fruit2 = new Mango();
-        Fruit fruit3 = new Apple();
+public class OverridingExample
+{
+    public static void main(String[] args)
+    {
+        Fruit fruit = new Fruit();
+        Fruit mango = new Mango();
+        Fruit apple = new Apple();
 
-        fruit1.eat();
-        fruit2.eat();
-        fruit3.eat();
+        fruit.eat();
+        mango.eat();
+        apple.eat();
     }
 }
