@@ -1,18 +1,70 @@
 package Inheritance;
 
-class Animal2{
-    void eat(){System.out.println("eating...");}
+class Vehicle
+{
+    public String brand;
+
+    public Vehicle(String brand) 
+    {
+        this.brand = brand;
+
+    }
+
+    public void start()
+    {
+        System.out.println(brand  + " is starting");
+    }
+
+    public void stop()
+    {
+        System.out.println(brand + " is stopping");
+    }
+
 }
-class Dog2 extends Animal2{
-    void bark(){System.out.println("barking...");}
+
+
+class Car extends Vehicle 
+{
+    public Car(String brand) 
+    {
+        super(brand);
+    }
+
+    public void drive() 
+    {
+        System.out.println(brand  + " is driving on the road.");
+    }
 }
-class Cat2 extends Animal2{
-    void meow(){System.out.println("meowing...");}
+
+
+class Motorcycle extends Vehicle 
+{
+    public Motorcycle(String brand) 
+    {
+        super(brand);
+    }
+
+    public void ride() 
+    {
+        System.out.println(brand + " is riding");
+    }
+    
 }
-class Hierarchical_inheritance{
-    public static void main(String args[]){
-        Cat2 c=new Cat2();
-        c.meow();
-        c.eat();
-       //c.bark();
-    }}
+
+
+
+public class HierarchicalInheritance 
+{
+    public static void main(String[] args) 
+    {
+        Car car = new Car("Toyota");
+        car.start();
+        car.drive();
+        car.stop();
+
+        Motorcycle motorcycle = new Motorcycle("Royal Enfield");
+        motorcycle.start();
+        motorcycle.ride();
+        motorcycle.stop();
+    }
+}
