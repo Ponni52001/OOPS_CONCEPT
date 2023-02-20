@@ -1,41 +1,35 @@
 package Polymorphism;
-
-class Fruit
+class Animal
 {
-    public void eat()
+    public void makeSound()
     {
-        System.out.println("Eating a fruit");
+        System.out.println("Animal makes sound");
     }
 }
 
-class Mango extends Fruit
+class Dog extends Animal
 {
-    @Override
-    public void eat()
+    public void makeSound()
     {
-        System.out.println("Eating a mango");
+        System.out.println("barking..");
     }
 }
-
-class Apple extends Fruit
+class Cat extends Animal
 {
-    @Override
-    public void eat()
+    public void makeSound() 
     {
-        System.out.println("Eating an apple");
+        System.out.println("meowing...");
     }
 }
-
 public class OverridingExample
 {
     public static void main(String[] args)
     {
-        Fruit fruit = new Fruit();
-        Fruit mango = new Mango();
-        Fruit apple = new Apple();
-
-        fruit.eat();
-        mango.eat();
-        apple.eat();
+        
+        Animal dog = new Dog();
+        dog.makeSound();
+        Animal cat = new Cat();
+        cat.makeSound();
+        
     }
 }
