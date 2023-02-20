@@ -29,10 +29,10 @@ class Student extends Person
 {
     String collegeName;
 
-    public Student(String name, int age, String schoolName) 
+    public Student(String name, int age, String collegeName) 
     {
         super(name, age);
-        this.collegeName = schoolName;
+        this.collegeName = collegeName;
     }
 
     public void study() 
