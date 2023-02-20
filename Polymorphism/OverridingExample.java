@@ -1,35 +1,43 @@
-package Polymorphism;
-class Animal
+class Employee
 {
-    public void makeSound()
+    
+    public void calculateSalary() 
     {
-        System.out.println("Animal makes sound");
+        System.out.println("Hi Your Salary has been credited based on your designation");
     }
+    
 }
 
-class Dog extends Animal
+class SoftwareDeveloper extends Employee
 {
-    public void makeSound()
+  
+    public void calculateSalary() 
     {
-        System.out.println("barking..");
+        System.out.println("Hi Your Salary Amount 20000.00 Has Been Successfully Credited");
     }
+    
 }
-class Cat extends Animal
+
+class QualityAssuranceEngineer extends Employee
 {
-    public void makeSound() 
+
+    public void calculateSalary()
     {
-        System.out.println("meowing...");
+        System.out.println("Hi Your Salary Amount 15000.00 Has Been Successfully Credited");
     }
+    
 }
-public class OverridingExample
+
+public class OverridingExample 
 {
-    public static void main(String[] args)
+    public static void main(String[] args) 
     {
         
-        Animal dog = new Dog();
-        dog.makeSound();
-        Animal cat = new Cat();
-        cat.makeSound();
+        Employee developer = new SoftwareDeveloper();
+        Employee tester = new QualityAssuranceEngineer();
+        developer.calculateSalary();
+        tester.calculateSalary();
         
     }
+    
 }
