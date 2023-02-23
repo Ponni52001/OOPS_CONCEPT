@@ -3,7 +3,8 @@ package SteppingNumber;
 import java.util.Scanner;
 
 
-public class Main {
+public class Main 
+{
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
@@ -21,10 +22,9 @@ public class Main {
         task1.isSingleDigit(startingNumber);
         startingNumber=task1.number;
 
+        
         SteppingNumbers numbers = new SteppingNumbers();
         numbers.printSteppingNumber(startingNumber,endingNumber);
-
-
 
     }
 }
