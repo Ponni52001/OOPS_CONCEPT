@@ -14,13 +14,14 @@ public class SteppingNumbers {
                     digit1 = temp % 10;
                     digit2 = (temp % 100) / 10;
                     if ((digit1 - digit2) == 1 || digit1 - digit2 == -1) {
+
                         temp = temp / 10;
 
                     } else {
                         break;
                     }
                 }
-                if (temp / 10 == 0 & (lastNumber - temp) == 1 || temp - lastNumber == 1) {
+                if (temp / 10 == 0||temp/10==1 & ((lastNumber - temp) == 1 || temp - lastNumber == 1)) {
                     System.out.println(i);
                     output = true;
                 }
