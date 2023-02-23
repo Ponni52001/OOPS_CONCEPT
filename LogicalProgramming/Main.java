@@ -19,6 +19,7 @@ public class Main {
 
         SingleDigitNumber task1 = new SingleDigitNumber();
         task1.isSingleDigit(startingNumber);
+        startingNumber=task1.number;
 
         SteppingNumbers numbers = new SteppingNumbers();
         numbers.printSteppingNumber(startingNumber,endingNumber);
