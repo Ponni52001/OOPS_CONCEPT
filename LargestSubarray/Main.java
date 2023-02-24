@@ -1,4 +1,4 @@
-package EqualZeroOne;
+
 
 
 import java.util.Scanner;
