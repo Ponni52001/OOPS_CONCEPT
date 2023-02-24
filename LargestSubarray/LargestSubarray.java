@@ -1,4 +1,4 @@
-package EqualZeroOne;
+
 
 public class LargestSubArray {
     public void findLargestSubarray(int array[],int lengthOfArray)
