@@ -1,43 +1,62 @@
+package NewCount;
 
-
-public class LargestSubArray {
-    public void findLargestSubarray(int array[],int lengthOfArray)
+public class LargestSubarray {
+    public void printLargestSubarray(int[] array,int zero,int one,int sizeOfArray)
     {
-        int zeros=0;
-        int ones=0;
-        for(int i=0;i< array.length;i++)
+        int minimumInteger = 0;
+        int minimumIntegerCount = 0;
+        int maximumInteger = 0;
+        int maximumIntegerCount = 0;
+        if (zero == one) {
+            System.out.println("0 to " + (sizeOfArray - 1));
+            return;
+        } else if (zero == 0 || one == 0) {
+            System.out.println("No sub array found!");
+            return;
+        } else if (zero < one) {
+            minimumInteger = 0;
+            minimumIntegerCount = zero;
+            maximumInteger = 1;
+            maximumIntegerCount = one;
+
+        } else {
+            minimumInteger = 1;
+            minimumIntegerCount = one;
+            maximumInteger = 0;
+            maximumIntegerCount = zero;
+        }
+        int start = 0;
+        int end = 0;
+        if (end == 0)
         {
-            if (array[i] == 0)
-            {
-                zeros++;
-            }
-            else {
-                ones++;
-            }
+            end = end + array.length - 1;
         }
 
-        System.out.println(zeros == ones ? "The Index of the Subarray starts from "+"0 to " + (array.length - 1) : (zeros == 0 || ones == 0 ? "No sub array found" : ""));
-
-        for(int i=0;i<array.length;i++)
+        for (int i = 0; i < sizeOfArray; i++)
         {
-            if(zeros>ones&&ones!=0)
+            for (int j = sizeOfArray - 1; j >= 0; j--)
             {
-                if(array[i]==0)
+                while (minimumIntegerCount != maximumIntegerCount && j != i)
                 {
-                    System.out.println("The Index of the Subarray starts from "+(i+1)+" to "+(array.length-1));
-                    break;
-                }
-            }
-            else if(ones>zeros&&zeros!=0)
-            {
-                if(array[i]==1)
-                {
-                    System.out.println("The Index of the Subarray starts from "+(i+1)+" to "+(array.length-1));
-                    break;
+                    if (array[j] != minimumInteger)
+                    {
+                        j--;
+                        end = j;
+                        maximumIntegerCount--;
+                    } else if (array[i] != minimumInteger) {
+                        i++;
+                        start = i;
+                        maximumIntegerCount--;
+                    }
                 }
             }
         }
+        System.out.println(start + " to " + end);
 
+
+//        for (int i = start; i <= end; i++) {
+//            System.out.print(array[i] + " ");
+//        }
 
     }
 }
