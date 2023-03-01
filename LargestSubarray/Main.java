@@ -1,31 +1,30 @@
-
+package NewCount;
 
 
 import java.util.Scanner;
 
-public class Main {
+ class printLargestSubArray {
     public static void main(String[] args) {
-
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array:");
-        int lengthOfArray = sc.nextInt();
-        int array[] = new int[lengthOfArray];
-        System.out.println("Enter the elements of the array:");
-        for(int i=0;i<array.length;i++)
-        {
-            int num=sc.nextInt();
-
-            if (num == 0 || num == 1) {
-                array[i] = num;
+        int sizeOfArray = sc.nextInt();
+        int array[] = new int[sizeOfArray];
+        int zero = 0;
+        int one = 0;
+        System.out.println("Enter the values:");
+        for (int i = 0; i < sizeOfArray; i++) {
+            array[i] = sc.nextInt();
+            if (array[i] == 0)
+            {
+                zero++;
             }
-            else {
-                System.out.println("You are not entering 0's or 1's");
-                break;
+            else
+            {
+                one++;
             }
         }
-        LargestSubArray subArray = new LargestSubArray();
-        subArray.findLargestSubarray(array,lengthOfArray);
+        LargestSubarray subArray=new LargestSubarray();
+        subArray.printLargestSubarray(array,zero,one,sizeOfArray);
 
     }
 }
