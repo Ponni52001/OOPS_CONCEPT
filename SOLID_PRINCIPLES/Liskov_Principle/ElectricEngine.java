@@ -1,4 +1,4 @@
-package com.Liskov1;
+package com.Liskov;
 
 class ElectricEngine implements Engine 
 
