@@ -1,16 +1,17 @@
 package com.mainpackage;
 import com.atm.CheckCardDetails;
 import com.Validation.Validator;
-import com.atm_card_generator.IndividualCustomerDetails;
+import com.atm_card_generator.Customer;
 import com.customer_records.CustomerDetails;
 
 import java.util.ArrayList;
-public class XYZAtm {
-    static ArrayList<IndividualCustomerDetails> customersArraylist = new ArrayList<>();
+public class XYZAtm 
+{
+    static ArrayList<Customer> customers = new ArrayList<>();
 
-    public static void main() {
+    public static void main(String[] args)
+    {
 
-        Validator validate = new Validator();
         System.out.println("Welcome to XYZ Bank!");
         System.out.println("------------------------------------------------------------------------------------------");
         while (true) {
@@ -19,26 +20,27 @@ public class XYZAtm {
             System.out.println("2. Continue with the ATM card.");
             System.out.println("3. Exit.");
 
-            int userInput = validate.validateNumberInput();
+            int userInput = Validator.validateUserInput();
 
-            if (userInput == 1) {
+            if (userInput == 1)
+            {
                 CustomerDetails details = new CustomerDetails();
-                details.storeCustomerDetails(customersArraylist);
+                details.storeCustomerDetails(customers);
 
             } else if (userInput == 2) {
-                CheckCardDetails.checkUserDetails(customersArraylist);
+                CheckCardDetails.checkUserDetails(customers);
             } else if(userInput==3){
                 System.exit(0);
             }
         }
     }
-        public void update(String cardNumber,double amount,double oldAccountBalance)
+        public static void update(String cardNumber,double amount,double oldAccountBalance)
         {
-            for (IndividualCustomerDetails individualCustomerDetails : customersArraylist)
+            for (Customer customer : customers)
             {
-                if(cardNumber.equals(individualCustomerDetails.getCardNumber()) && oldAccountBalance==(individualCustomerDetails.getBankBalance()))
+                if(cardNumber.equals(customer.getCardNumber()) && oldAccountBalance==(customer.getBankBalance()))
                 {
-                    individualCustomerDetails.setBankBalance(amount);
+                    customer.setBankBalance(amount);
                 }
             }
         }
